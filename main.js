@@ -1,4 +1,5 @@
-let buildUrl = "Build";
+
+let buildUrl = "https://al4iii.github.io/fish/TemplateData";
 let loaderUrl = buildUrl + "/Biba.loader.js";
 let config = {
   dataUrl: buildUrl + "/Biba.data.unityweb",
