@@ -1,4 +1,3 @@
-
 let buildUrl = "https://al4iii.github.io/fish/Build";
 let loaderUrl = buildUrl + "/Biba.loader.js";
 let config = {
@@ -12,6 +11,7 @@ let config = {
 };
 
 let container = document.querySelector("#unity-container");
+
 let canvas = document.querySelector("#unity-canvas");
 let loadingBar = document.querySelector("#unity-loading-bar");
 let progressBarFull = document.querySelector("#unity-progress-bar-full");
@@ -39,12 +39,13 @@ script.onload = () => {
   })
     .then((unityInstance) => {
       loadingBar.style.display = "none";
-      fullscreenButton.onclick = () => {
-        unityInstance.SetFullscreen(1);
+      button.onclick = () => {
+        unityInstance.SendMessage("WebData", "PauseEnable");
       };
     })
     .catch((message) => {
       alert(message);
     });
 };
+
 document.body.appendChild(script);
